@@ -20,14 +20,14 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg &&
 arch-chroot /mnt sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g' /etc/sudoers &&
 arch-chroot /mnt sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf &&
 arch-chroot /mnt sed -i 's/#user-session=default/user-session=default/g' /etc/lightdm/lightdm.conf &&
-arch-chroot /mnt mkdir .config/bspwm &&
-arch-chroot /mnt git clone https://github.com/N0N4M3ND/polybar &&
-arch-chroot /mnt chown arch:arch polybar &&
-arch-chroot /mnt mv polybar /home/arch/.config/
-arch-chroot /mnt mkdir .config/sxhkd &&
-arch-chroot /mnt mkdir .config/alacritty &&
-arch-chroot /mnt cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm &&
-arch-chroot /mnt cp /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd &&
+#arch-chroot /mnt mkdir .config/bspwm &&
+#arch-chroot /mnt git clone https://github.com/N0N4M3ND/polybar &&
+#arch-chroot /mnt chown arch:arch polybar &&
+#arch-chroot /mnt mv polybar /home/arch/.config/
+#arch-chroot /mnt mkdir /home/arch/.config/sxhkd &&
+#arch-chroot /mnt mkdir /home/arch/.config/alacritty &&
+#arch-chroot /mnt cp /usr/share/doc/bspwm/examples/bspwmrc /home/arch/.config/bspwm &&
+#arch-chroot /mnt cp /usr/share/doc/bspwm/examples/sxhkdrc /home/arch/.config/sxhkd &&
 arch-chroot /mnt systemctl enable lightdm &&
 arch-chroot /mnt systemctl enable NetworkManager &&
 figlet THE INSTALLATION IS COMPLETE
