@@ -22,7 +22,7 @@ arch-chroot /mnt sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=li
 arch-chroot /mnt sed -i 's/#user-session=default/user-session=default/g' /etc/lightdm/lightdm.conf &&
 arch-chroot /mnt su arch &&
 arch-chroot /mnt cd &&
-rm -rf .* &&
+arch-chroot /mnt git clone https://github.com/N0N4M3ND/.config &&
 arch-chroot /mnt mkdir .config/bspwm &&
 arch-chroot /mnt mkdir .config/sxhkd &&
 arch-chroot /mnt mkdir .config/alacritty &&
