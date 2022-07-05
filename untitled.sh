@@ -25,4 +25,4 @@ arch-chroot /mnt sed -i 's/#user-session=default/user-session=default/g' /etc/li
 arch-chroot /mnt systemctl enable lightdm &&
 arch-chroot /mnt systemctl enable NetworkManager &&
 umount -a &&
-figlet THE INSTALLATION IS COMPLETE
+figlet INSTALLATION COMPLETE
