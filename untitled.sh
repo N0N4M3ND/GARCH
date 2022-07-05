@@ -1,5 +1,5 @@
 pacman -Syy &&
-pacman-Syu &&
+pacman -Syu &&
 pacman -Sy figlet &&
 mkfs.fat -F 32 /dev/sda1 && mkswap /dev/sda2 &&
 mkfs.ext4 /dev/sda3 && 
@@ -7,7 +7,7 @@ mount /dev/sda3 /mnt &&
 swapon /dev/sda2 &&
 mount --mkdir /dev/sda1 /mnt/boot/efi &&
 timedatectl set-ntp true &&
-pacstrap /mnt linux linux-firmware base base-devel grub efibootmgr nano vim networkmanager xorg lightdm-webkit2-greeter bspwm sxhkd alacritty ttf-liberation noto-fonts-emoji rofi pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol git neofetch lxappearance nitrogen picom polybar unzip amd-ucode nvidia && pacstrap /mnt mpv obs-studio firefox &&
+pacstrap /mnt linux linux-firmware base base-devel grub efibootmgr nano vim networkmanager xorg lightdm-webkit2-greeter bspwm sxhkd alacritty ttf-liberation noto-fonts-emoji rofi pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol git neofetch htop lxappearance nitrogen picom polybar unzip amd-ucode nvidia && pacstrap /mnt mpv obs-studio firefox &&
 genfstab -U /mnt > /mnt/etc/fstab &&
 arch-chroot /mnt ln -sf /usr/share/zoneinfo/Asia/Tbilisi /etc/localtime &&
 arch-chroot /mnt sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen &&
