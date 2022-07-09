@@ -15,9 +15,11 @@ arch-chroot /mnt locale-gen &&
 arch-chroot /mnt touch /etc/locale.conf &&
 arch-chroot /mnt echo LANG=en_US.UTF-8 > /etc/locale.conf &&
 arch-chroot /mnt touch /etc/hostname &&
-arch-chroot /mnt echo archlinux > /etc/hostname && arch-chroot /mnt passwd &&
+arch-chroot /mnt echo archlinux > /etc/hostname &&
+arch-chroot /mnt passwd &&
 arch-chroot /mnt useradd -m -G wheel -s /bin/bash arch &&
-arch-chroot /mnt passwd arch && arch-chroot /mnt grub-install /dev/sda &&
+arch-chroot /mnt passwd arch &&
+arch-chroot /mnt grub-install /dev/sda &&
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg &&
 arch-chroot /mnt sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g' /etc/sudoers &&
 arch-chroot /mnt sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf &&
