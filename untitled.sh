@@ -6,7 +6,7 @@ mkfs.ext4 /dev/sda3 &&
 mount /dev/sda3 /mnt &&
 swapon /dev/sda2 &&
 mount --mkdir /dev/sda1 /mnt/boot/efi &&
-pacstrap /mnt linux linux-headers linux-firmware base base-devel grub efibootmgr nano vim networkmanager net-tools openssh xorg lightdm-webkit2-greeter bspwm sxhkd alacritty code rofi ttf-liberation ttf-nerd-fonts-symbols pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol git picom nitrogen polybar neofetch htop unzip amd-ucode nvidia virtualbox blender &&
+pacstrap /mnt linux linux-headers linux-firmware base base-devel grub efibootmgr nano vim networkmanager net-tools openssh xorg lightdm-webkit2-greeter bspwm sxhkd alacritty code rofi ttf-liberation ttf-nerd-fonts-symbols pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol git picom nitrogen polybar neofetch htop unzip amd-ucode nvidia virtualbox blender breeze &&
 pacstrap /mnt mpv obs-studio firefox kdenlive &&
 genfstab -U /mnt > /mnt/etc/fstab &&
 arch-chroot /mnt ln -sf /usr/share/zoneinfo/Asia/Tbilisi /etc/localtime &&
