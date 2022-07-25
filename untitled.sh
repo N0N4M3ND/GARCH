@@ -1,12 +1,14 @@
 pacman -Syy &&
 pacman -Syu &&
 pacman -Sy figlet &&
-mkfs.fat -F 32 /dev/sda1 && mkswap /dev/sda2 &&
+mkfs.fat -F 32 /dev/sda1 &&
+mkswap /dev/sda2 &&
 mkfs.ext4 /dev/sda3 &&
 mount /dev/sda3 /mnt &&
 swapon /dev/sda2 &&
 mount --mkdir /dev/sda1 /mnt/boot/efi &&
-pacstrap /mnt linux linux-headers linux-firmware base base-devel grub efibootmgr nano vim networkmanager net-tools openssh xorg lightdm-webkit2-greeter bspwm sxhkd alacritty code rofi ttf-liberation ttf-nerd-fonts-symbols bluez blueman pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol git picom feh nitrogen polybar htop neofetch unzip amd-ucode intel-ucode nvidia virtualbox blender && pacstrap /mnt vlc obs-studio firefox &&
+pacstrap /mnt linux linux-headers linux-firmware base base-devel grub efibootmgr nano vim networkmanager net-tools openssh xorg lightdm-webkit2-greeter bspwm sxhkd alacritty code rofi ttf-liberation ttf-nerd-fonts-symbols bluez blueman pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol git picom feh nitrogen polybar htop neofetch unzip amd-ucode intel-ucode nvidia virtualbox blender &&
+pacstrap /mnt vlc obs-studio firefox &&
 genfstab -U /mnt > /mnt/etc/fstab &&
 arch-chroot /mnt ln -sf /usr/share/zoneinfo/Asia/Tbilisi /etc/localtime &&
 arch-chroot /mnt sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen &&
