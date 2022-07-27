@@ -7,7 +7,7 @@ mkfs.ext4 /dev/sda3 &&
 mount /dev/sda3 /mnt &&
 swapon /dev/sda2 &&
 mount --mkdir /dev/sda1 /mnt/boot/efi &&
-pacstrap /mnt linux linux-headers linux-firmware base base-devel grub efibootmgr nano vim networkmanager net-tools openssh xorg lightdm-webkit2-greeter bspwm sxhkd alacritty code rofi ttf-liberation ttf-nerd-fonts-symbols bluez blueman pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol git picom feh nitrogen polybar htop neofetch unzip amd-ucode intel-ucode nvidia virtualbox blender &&
+pacstrap /mnt linux linux-headers linux-firmware base base-devel grub efibootmgr nano vim networkmanager net-tools openssh xorg lightdm-webkit2-greeter bspwm sxhkd alacritty code rofi ttf-liberation ttf-nerd-fonts-symbols bluez blueman pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol udisks2 git picom feh nitrogen polybar htop neofetch unzip amd-ucode intel-ucode nvidia virtualbox blender &&
 pacstrap /mnt vlc obs-studio firefox &&
 genfstab -U /mnt > /mnt/etc/fstab &&
 arch-chroot /mnt ln -sf /usr/share/zoneinfo/Asia/Tbilisi /etc/localtime &&
@@ -27,5 +27,6 @@ arch-chroot /mnt sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=li
 arch-chroot /mnt sed -i 's/#user-session=default/user-session=default/g' /etc/lightdm/lightdm.conf &&
 arch-chroot /mnt systemctl enable lightdm &&
 arch-chroot /mnt systemctl enable NetworkManager &&
+arch-chroot /mnt systemctl enable udisks2 &&
 umount -a &&
 figlet INSTALLATION COMPLETE
