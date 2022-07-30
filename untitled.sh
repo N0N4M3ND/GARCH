@@ -1,5 +1,5 @@
 pacman -Syy &&
-pacman -Sy archlinux-keyring &&
+pacman -Sy archlinux-keyring figlet &&
 mkfs.fat -F 32 /dev/sda1 &&
 mkswap /dev/sda2 &&
 mkfs.ext4 /dev/sda3 &&
@@ -26,3 +26,5 @@ arch-chroot /mnt sed -i 's/#user-session=default/user-session=default/g' /etc/li
 arch-chroot /mnt systemctl enable lightdm &&
 arch-chroot /mnt systemctl enable NetworkManager &&
 umount -a &&
+clear &&
+figlet INSTALLATION COMPLETE
