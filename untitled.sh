@@ -1,5 +1,5 @@
 pacman -Syy &&
-pacman -Sy figlet archlinux-keyring &&
+pacman -Sy archlinux-keyring &&
 mkfs.fat -F 32 /dev/sda1 &&
 mkswap /dev/sda2 &&
 mkfs.ext4 /dev/sda3 &&
@@ -25,5 +25,4 @@ arch-chroot /mnt sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=li
 arch-chroot /mnt sed -i 's/#user-session=default/user-session=default/g' /etc/lightdm/lightdm.conf &&
 arch-chroot /mnt systemctl enable lightdm &&
 arch-chroot /mnt systemctl enable NetworkManager &&
-umount -a &&
-figlet INSTALLATION COMPLETE
+umount -a
