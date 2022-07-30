@@ -25,4 +25,4 @@ arch-chroot /mnt sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=li
 arch-chroot /mnt sed -i 's/#user-session=default/user-session=default/g' /etc/lightdm/lightdm.conf &&
 arch-chroot /mnt systemctl enable lightdm &&
 arch-chroot /mnt systemctl enable NetworkManager &&
-umount -a
+umount -a &&
